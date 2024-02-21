@@ -1,4 +1,4 @@
-import ErrorResponse from "./error.response"
+import ErrorResponse from "./error_response"
 
 class Response<T> {
     public success: boolean

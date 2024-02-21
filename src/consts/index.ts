@@ -1,7 +1,9 @@
-import statesCodes from "./statesCodes"
-import * as configApi from "./configApi"
+import statesCodes from "./states_codes"
+import * as configApi from "./config_api"
+import * as shared from "./shared"
 
 export {
     statesCodes,
-    configApi
+    configApi,
+    shared
 }

@@ -1,5 +1,5 @@
-import DatabaseConnection from "./databaseConnection"
-import TransactionSession from "./transactionSession"
+import DatabaseConnection from "./database_connection"
+import TransactionSession from "./transaction_session"
 
 class TransactionManager {
     private context: DatabaseConnection

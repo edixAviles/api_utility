@@ -1,4 +1,4 @@
-import ApplicationService from "./applicationService"
+import ApplicationService from "./application_service"
 
 export {
     ApplicationService

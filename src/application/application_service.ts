@@ -1,4 +1,4 @@
-import TransactionManager from "../database/transactionManager"
+import TransactionManager from "../database/transaction_manager"
 
 abstract class ApplicationService {
     public transactionManager: TransactionManager

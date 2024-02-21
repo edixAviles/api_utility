@@ -1,7 +1,7 @@
 import { ObjectId } from "mongodb"
 
 import BaseBasicModel from "./base.model"
-import TransactionSession from "../database/transactionSession"
+import TransactionSession from "../database/transaction_session"
 
 abstract class Repository<T extends BaseBasicModel> {
     public transaction: TransactionSession

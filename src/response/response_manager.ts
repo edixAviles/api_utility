@@ -1,5 +1,5 @@
 import Response from "./response"
-import ErrorResponse from "./error.response"
+import ErrorResponse from "./error_response"
 
 class ResponseManager<T> {
     onSuccess(response: T): Response<T> {
