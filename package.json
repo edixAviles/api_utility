@@ -5,6 +5,7 @@
   "main": "index.js",
   "author": "Edison Avilés",
   "license": "ISC",
+  "type": "module",
   "scripts": {
     "dist": "rimraf ./dist && tsc",
     "start:dev": "npx nodemon",
