@@ -1,9 +1,9 @@
 import { ObjectId } from "mongodb"
 
-import BaseBasicModel from "./base.model"
+import BaseModel from "./base.model"
 import TransactionSession from "../database/transaction_session"
 
-abstract class Repository<T extends BaseBasicModel> {
+abstract class Repository<T extends BaseModel> {
     public transaction: TransactionSession
 
     constructor(transaction: TransactionSession) {
@@ -67,14 +67,4 @@ abstract class Repository<T extends BaseBasicModel> {
     }
 }
 
-interface IRepository<T extends BaseBasicModel> {
-    get(id: ObjectId): Promise<T>
-    insert(entity: T): Promise<T>
-    update(entity: T): Promise<T>
-    delete(id: ObjectId): Promise<void>
-}
-
-export {
-    Repository,
-    IRepository
-}
+export default Repository
