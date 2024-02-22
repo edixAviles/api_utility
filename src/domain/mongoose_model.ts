@@ -17,4 +17,4 @@ const mongooseModel = (className: string, properties: any): mongoose.Model<any> 
     return model
 }
 
-export default mongooseModel
+export = mongooseModel

@@ -23,4 +23,4 @@ class DatabaseConnection {
     }
 }
 
-export default DatabaseConnection
+export = DatabaseConnection

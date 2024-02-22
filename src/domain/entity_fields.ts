@@ -2,4 +2,4 @@ enum EntityFields {
     id = "id"
 }
 
-export default EntityFields
+export = EntityFields

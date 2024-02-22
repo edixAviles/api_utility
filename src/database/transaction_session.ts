@@ -18,4 +18,4 @@ class TransactionSession {
     }
 }
 
-export default TransactionSession
+export = TransactionSession

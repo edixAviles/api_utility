@@ -8,4 +8,4 @@ abstract class ApplicationService {
     }
 }
 
-export default ApplicationService
+export = ApplicationService

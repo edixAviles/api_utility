@@ -10,4 +10,4 @@ class Response<T> {
     }
 }
 
-export default Response
+export = Response

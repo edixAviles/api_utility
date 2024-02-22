@@ -3,4 +3,4 @@ abstract class ApiConfiguration {
     static limitRequest = "5mb"
 }
 
-export default ApiConfiguration
+export = ApiConfiguration

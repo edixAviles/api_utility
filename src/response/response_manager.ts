@@ -17,4 +17,4 @@ class ResponseManager<T> {
     }
 }
 
-export default ResponseManager
+export = ResponseManager

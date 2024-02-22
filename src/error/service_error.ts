@@ -6,4 +6,4 @@ abstract class ServiceError {
     }
 }
 
-export default ServiceError
+export = ServiceError
