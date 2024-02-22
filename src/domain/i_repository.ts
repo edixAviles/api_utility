@@ -1,4 +1,4 @@
-import { ObjectId } from "mongoose"
+import { ObjectId } from "mongodb"
 import BaseModel from "./base.model"
 
 interface IRepository<T extends BaseModel> {
