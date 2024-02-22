@@ -1,13 +1,5 @@
-import BaseModel from "./base.model"
-import * as BaseSchema from "./base.schema"
-import mongooseModel from "./mongoose.model"
-import Repository from "./repository"
-import IRepository from "./i_repository"
-
-export {
-    BaseModel,
-    BaseSchema,
-    mongooseModel,
-    Repository,
-    IRepository
-}
+export { default as BaseModel } from "./base_model";
+export { default as BaseSchema } from "./base_schema";
+export { default as mongooseModel } from "./mongoose_model";
+export { default as Repository } from "./repository";
+export { default as IRepository } from "./i_repository";
