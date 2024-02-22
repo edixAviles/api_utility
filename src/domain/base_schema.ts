@@ -23,4 +23,4 @@ const baseSchema = {
     }
 }
 
-export default baseSchema
+export = baseSchema

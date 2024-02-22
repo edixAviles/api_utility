@@ -10,4 +10,4 @@ class ErrorResponse {
     }
 }
 
-export default ErrorResponse
+export = ErrorResponse

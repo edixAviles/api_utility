@@ -20,4 +20,4 @@ class TransactionManager {
     }
 }
 
-export default TransactionManager
+export = TransactionManager

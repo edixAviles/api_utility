@@ -11,4 +11,4 @@ class ServiceException extends Error {
     }
 }
 
-export default ServiceException
+export = ServiceException

@@ -7,4 +7,4 @@ enum HttpStatusCode  {
     INTERNAL_SERVER_ERROR = 500
 }
 
-export default HttpStatusCode 
+export = HttpStatusCode 

@@ -67,4 +67,4 @@ abstract class Repository<T extends BaseModel> {
     }
 }
 
-export default Repository
+export = Repository

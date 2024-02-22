@@ -6,4 +6,4 @@ abstract class MediaTypeNames {
     static Text = Text
 }
 
-export default MediaTypeNames
+export = MediaTypeNames
