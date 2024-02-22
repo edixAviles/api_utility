@@ -1,9 +1,5 @@
 import { ObjectId } from "mongodb"
 
-const baseOptions = {
-    timestamps: true
-}
-
 const baseSchema = {
     _id: {
         type: ObjectId,
@@ -27,7 +23,4 @@ const baseSchema = {
     }
 }
 
-export {
-    baseOptions,
-    baseSchema
-}
+export default baseSchema

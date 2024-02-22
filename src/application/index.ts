@@ -1,5 +1,1 @@
-import ApplicationService from "./application_service"
-
-export {
-    ApplicationService
-}
+export { default as ApplicationService } from "./application_service";

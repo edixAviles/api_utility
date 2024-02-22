@@ -6,6 +6,8 @@ import * as response from "./src/response"
 import * as exception from "./src/exception"
 import * as error from "./src/error"
 
+console.log(consts.ApiConfiguration.isProduction)
+
 export {
     application,
     consts,

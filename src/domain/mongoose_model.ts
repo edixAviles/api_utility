@@ -1,10 +1,11 @@
 
 import mongoose from "mongoose"
 
-import {
-    baseOptions,
-    baseSchema
-} from "./base.schema"
+import baseSchema from "./base_schema"
+
+const baseOptions = {
+    timestamps: true
+}
 
 const mongooseModel = (className: string, properties: any): mongoose.Model<any> => {
     const schema = new mongoose.Schema({
