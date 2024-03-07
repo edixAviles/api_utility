@@ -1,7 +1,7 @@
 import { AutoMap } from "@automapper/classes"
 import { ObjectId } from "mongodb"
 
-export abstract class BaseModel {
+abstract class BaseModel {
     @AutoMap()
     _id?: ObjectId
     
@@ -18,3 +18,4 @@ export abstract class BaseModel {
     }
 }
 
+export default BaseModel

@@ -1,9 +1,11 @@
-import { TransactionManager } from "../database/transaction_manager"
+import TransactionManager from "database/transaction_manager"
 
-export abstract class ApplicationService {
+abstract class ApplicationService {
     public transactionManager: TransactionManager
 
     constructor() {
         this.transactionManager = new TransactionManager()
     }
 }
+
+export default ApplicationService

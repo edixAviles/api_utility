@@ -1,7 +1,7 @@
-import { DatabaseConnection } from "./database_connection"
-import { TransactionSession } from "./transaction_session"
+import DatabaseConnection from "./database_connection"
+import TransactionSession from "./transaction_session"
 
-export class TransactionManager {
+class TransactionManager {
     private dbContext: DatabaseConnection
 
     constructor() {
@@ -20,3 +20,4 @@ export class TransactionManager {
     }
 }
 
+export default TransactionManager

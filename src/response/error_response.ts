@@ -1,4 +1,4 @@
-export class ErrorResponse {
+class ErrorResponse {
     public code: string
     public message: string
     public details?: string
@@ -9,3 +9,5 @@ export class ErrorResponse {
         this.details = details
     }
 }
+
+export default ErrorResponse
