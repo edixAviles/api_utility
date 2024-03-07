@@ -6,8 +6,6 @@ import * as Error from "./src/error"
 import * as Exception from "./src/exception"
 import * as Response from "./src/response"
 
-console.log(Consts.ApiConfiguration.limitRequest)
-
 export {
     ApplicationService,
     Consts,

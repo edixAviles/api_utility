@@ -1,4 +1,4 @@
-import { ServiceError } from "./service_error";
+import { ServiceError } from "./service_error"
 
 export {
     ServiceError

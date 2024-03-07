@@ -1,25 +1,27 @@
 import mongoose, { Connection } from "mongoose"
 
 export class DatabaseConnection {
-    private static context: DatabaseConnection
+    private static instance: DatabaseConnection
     public connection: Connection
 
-    public connectDatabase = (username: string, password: string, cluster: string, database: string) => {
+    private constructor() { }
+
+    public connectDatabase(username: string, password: string, cluster: string, database: string) {
         const uri = `mongodb+srv://${username}:${password}@${cluster}/${database}?retryWrites=true&w=majority`
         const options = {
         }
 
         mongoose.connect(uri, options).then(() => {
             this.connection = mongoose.connection
+            console.info("Mongo is running")
         })
     }
 
     public static getInstance(): DatabaseConnection {
-        if (!this.context) {
-            this.context = new DatabaseConnection()
+        if (!DatabaseConnection.instance) {
+            DatabaseConnection.instance = new DatabaseConnection()
         }
 
-        return this.context
+        return DatabaseConnection.instance
     }
 }
-
