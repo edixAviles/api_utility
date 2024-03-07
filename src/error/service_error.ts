@@ -1,7 +1,7 @@
 import ErrorResponse from "../response/error_response"
 
 abstract class ServiceError {
-    public static getException(error: Error): ErrorResponse {
+    public static getException(error: any): ErrorResponse {
         return new ErrorResponse(error.name, error.message)
     }
 }
