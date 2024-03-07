@@ -3,9 +3,9 @@ import BaseModel from "./base_model"
 import TransactionSession from "../database/transaction_session"
 
 abstract class Repository<T extends BaseModel> {
-    public transaction: TransactionSession
+    public transaction?: TransactionSession
 
-    constructor(transaction: TransactionSession) {
+    constructor(transaction?: TransactionSession) {
         this.transaction = transaction
     }
 

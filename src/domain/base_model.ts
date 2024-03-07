@@ -3,7 +3,7 @@ import { ObjectId } from "mongodb"
 
 abstract class BaseModel {
     @AutoMap()
-    _id?: ObjectId
+    _id: ObjectId
     
     createdAt: Date
     creatorUser?: string
