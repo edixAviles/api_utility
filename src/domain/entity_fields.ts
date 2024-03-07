@@ -1,5 +1,4 @@
-enum EntityFields {
+export enum EntityFields {
     id = "id"
 }
 
-export = EntityFields
