@@ -1,9 +1,8 @@
 import { ObjectId } from "mongodb"
+import { BaseModel } from "./base_model"
+import { TransactionSession } from "../database/transaction_session"
 
-import BaseModel from "./base_model"
-import TransactionSession from "../database/transaction_session"
-
-abstract class Repository<T extends BaseModel> {
+export abstract class Repository<T extends BaseModel> {
     public transaction: TransactionSession
 
     constructor(transaction: TransactionSession) {
@@ -66,5 +65,3 @@ abstract class Repository<T extends BaseModel> {
         return data
     }
 }
-
-export = Repository

@@ -2,7 +2,7 @@
   "name": "api_utility",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
   "author": "Edison Avilés",
   "license": "ISC",
   "scripts": {

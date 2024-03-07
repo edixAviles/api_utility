@@ -1,4 +1,4 @@
-import ServiceException from "./service_exception";
+import { ServiceException } from "./service_exception";
 
 export {
     ServiceException

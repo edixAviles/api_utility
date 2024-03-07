@@ -1,6 +1,6 @@
 import { ClientSession } from "mongoose"
 
-class TransactionSession {
+export class TransactionSession {
     public session: ClientSession
 
     constructor(session: ClientSession) {
@@ -18,4 +18,3 @@ class TransactionSession {
     }
 }
 
-export = TransactionSession

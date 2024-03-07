@@ -1,6 +1,6 @@
-import ErrorResponse from "./error_response"
+import { ErrorResponse } from "./error_response"
 
-class Response<T> {
+export class Response<T> {
     public success: boolean
     public result: T
     public error: ErrorResponse
@@ -9,5 +9,3 @@ class Response<T> {
         Object.assign(this, init)
     }
 }
-
-export = Response
