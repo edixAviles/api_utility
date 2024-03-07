@@ -1,42 +1,23 @@
 {
     "compilerOptions": {
-        "allowJs": true,
+        "target": "es6",
         "module": "CommonJS",
         "moduleResolution": "node",
-        "pretty": true,
-        "inlineSourceMap": true,
-        "target": "es6",
+        "strict": true,
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true,
         "outDir": "./dist",
-        "lib": [
-        "es6"
-        ],
-        "resolveJsonModule": true,
-        "types": [
-        "node"
-        ],
-        "typeRoots": [
-        "./node_modules/@types",
-        "./src/@types"
-        ],
+        "baseUrl": "./src",
+        "paths": {
+            "*": ["*", "dist/*"]
+        },
+        "ignoreDeprecations": "5.0",
         "experimentalDecorators": true,
         "emitDecoratorMetadata": true,
-        "esModuleInterop": true,
+        "strictPropertyInitialization": false,
+        "suppressImplicitAnyIndexErrors": true,
     },
-    "include": [
-        "src/infra/sequelize/**/*.js",
-        "src/infra/sequelize/**/*.ts",
-        "./src/**/*.js",
-        "./src/**/*.ts",
-        "./src/**/*.js",
-        "./src/**/*.json",
-        "index.ts",
-    ],
-    "exclude": [
-        "node_modules",
-        "!node_modules/@types",
-        "./dist"
-    ],
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
-    "skipLibCheck": true
+    "include": ["src/**/*.ts"],
+    "exclude": ["node_modules", "dist"]
 }
