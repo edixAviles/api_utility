@@ -1,9 +1,11 @@
 import { ObjectId } from "mongodb"
-import { BaseModel } from "./base_model"
+import BaseModel from "./base_model"
 
-export interface IRepository<T extends BaseModel> {
+interface IRepository<T extends BaseModel> {
     get(id: ObjectId): Promise<T>
     insert(entity: T): Promise<T>
     update(entity: T): Promise<T>
     delete(id: ObjectId): Promise<void>
 }
+
+export default IRepository

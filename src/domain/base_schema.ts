@@ -1,6 +1,6 @@
 import { ObjectId } from "mongodb"
 
-export const baseSchema = {
+const baseSchema = {
     _id: {
         type: ObjectId,
         required: true,
@@ -22,3 +22,5 @@ export const baseSchema = {
         type: String,
     }
 }
+
+export default baseSchema

@@ -1,7 +1,7 @@
-import { Response } from "./response"
-import { ErrorResponse } from "./error_response"
+import Response from "./response"
+import ErrorResponse from "./error_response"
 
-export class ResponseManager<T> {
+class ResponseManager<T> {
     onSuccess(response: T): Response<T> {
         return new Response<T>({
             success: true,
@@ -16,3 +16,5 @@ export class ResponseManager<T> {
         })
     }
 }
+
+export default ResponseManager
