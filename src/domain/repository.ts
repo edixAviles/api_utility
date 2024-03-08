@@ -1,6 +1,7 @@
 import { ObjectId } from "mongodb"
 import BaseModel from "./base_model"
 import TransactionSession from "../database/transaction_session"
+import Utilities from "../shared/utilities"
 
 abstract class Repository<T extends BaseModel> {
     public transaction?: TransactionSession
@@ -33,16 +34,15 @@ abstract class Repository<T extends BaseModel> {
     }
 
     public optionsToUpdate(): object {
-        const options = {
-            new: true
-        }
+        const options = new Map<string, any>()
+        options.set("new", true)
 
         if (!this.transaction?.session) {
             return options
         }
 
-        options["session"] = this.transaction.session
-        return options
+        options.set("session", this.transaction.session)
+        return Utilities.mapToObject(options)
     }
 
     static paramsToDelete(): object {
@@ -53,16 +53,16 @@ abstract class Repository<T extends BaseModel> {
     }
 
     public mapObjectToUpdate(entity: T): object {
-        const data = {}
+        const data = new Map<string, any>()
 
         const entries = Object.entries(entity)
         entries.map(([key, val]) => {
             if (val || val >= 0) {
-                data[key] = val
+                data.set(key, val)
             }
         })
 
-        return data
+        return Utilities.mapToObject(data)
     }
 }
 

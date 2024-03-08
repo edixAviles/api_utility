@@ -22,3 +22,5 @@ export * from "./exception/service_exception"
 export * from "./response/error_response"
 export * from "./response/response"
 export * from "./response/response_manager"
+
+export * from "./shared/utilities"
