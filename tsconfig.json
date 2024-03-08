@@ -1,23 +1,22 @@
 {
     "compilerOptions": {
-        "target": "es6",
-        "module": "CommonJS",
-        "moduleResolution": "node",
-        "strict": true,
+        "module": "commonjs",
         "esModuleInterop": true,
-        "skipLibCheck": true,
-        "forceConsistentCasingInFileNames": true,
+        "target": "es6",
+        "noImplicitAny": true,
+        "moduleResolution": "node",
+        "sourceMap": false,
+        "rootDir": ".",
+        "strict": true,
+        "noEmit": false,
+        "resolveJsonModule": true,
+        "noUnusedLocals": true,
         "outDir": "./dist",
         "baseUrl": "./src",
-        "paths": {
-            "*": ["*", "dist/*"]
-        },
-        "ignoreDeprecations": "5.0",
+        
+        "strictPropertyInitialization": false,
         "experimentalDecorators": true,
         "emitDecoratorMetadata": true,
-        "strictPropertyInitialization": false,
-        "suppressImplicitAnyIndexErrors": true,
-        "allowSyntheticDefaultImports": true,
     },
     "include": ["src/**/*.ts"],
     "exclude": ["node_modules", "dist"]
