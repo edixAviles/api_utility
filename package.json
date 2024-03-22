@@ -5,6 +5,7 @@
   "main": "dist/index.js",
   "author": "Edison Avilés",
   "license": "ISC",
+  "type": "module",
   "scripts": {
     "start:dev": "npx nodemon",
     "start": "tsc && node dist/index.js"
