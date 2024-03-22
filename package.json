@@ -6,6 +6,7 @@
   "author": "Edison Avilés",
   "license": "ISC",
   "scripts": {
+    "pretty": "prettier --write \"./**/*.{js,jsx,mjs,cjs,ts,tsx,json}\"",
     "start:dev": "npx nodemon",
     "start": "tsc && node dist/index.js"
   },
