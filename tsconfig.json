@@ -1,6 +1,11 @@
 {
+    "ts-node": {
+        "compilerOptions": {
+            "module": "commonjs"
+        }
+    },
     "compilerOptions": {
-        "module": "commonjs",
+        "module": "esnext",
         "esModuleInterop": true,
         "target": "es6",
         "noImplicitAny": true,
@@ -13,11 +18,15 @@
         "noUnusedLocals": true,
         "outDir": "./dist",
         "baseUrl": "./src",
-        
         "strictPropertyInitialization": false,
         "experimentalDecorators": true,
         "emitDecoratorMetadata": true,
     },
-    "include": ["src/**/*.ts"],
-    "exclude": ["node_modules", "dist"]
+    "include": [
+        "src/**/*.ts"
+    ],
+    "exclude": [
+        "node_modules",
+        "dist"
+    ]
 }
