@@ -8,4 +8,4 @@ interface IRepository<T extends BaseModel> {
   delete(id: ObjectId): Promise<void>
 }
 
-export default IRepository
+export type { IRepository as IRepository }

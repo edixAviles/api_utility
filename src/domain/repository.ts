@@ -13,13 +13,13 @@ abstract class Repository<T extends BaseModel> {
   static filterToGetById(id: ObjectId): object {
     return {
       _id: id,
-      isDeleted: { $ne: true }
+      isDeleted: { $ne: true },
     }
   }
 
   static filterToGetActive(): object {
     return {
-      isDeleted: { $ne: true }
+      isDeleted: { $ne: true },
     }
   }
 
@@ -29,7 +29,7 @@ abstract class Repository<T extends BaseModel> {
     }
 
     return {
-      session: this.transaction.session
+      session: this.transaction.session,
     }
   }
 
@@ -48,7 +48,7 @@ abstract class Repository<T extends BaseModel> {
   static paramsToDelete(): object {
     return {
       isDeleted: true,
-      deletedAt: new Date()
+      deletedAt: new Date(),
     }
   }
 
