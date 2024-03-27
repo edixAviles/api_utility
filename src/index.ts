@@ -6,3 +6,5 @@ export * from "./error"
 export * from "./exception"
 export * from "./response"
 export * from "./shared"
+
+console.log("hola")

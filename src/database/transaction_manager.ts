@@ -12,7 +12,7 @@ class TransactionManager {
     const session = await this.dbContext.connection.startSession()
     session.startTransaction({
       readConcern: { level: "snapshot" },
-      writeConcern: { w: "majority" }
+      writeConcern: { w: "majority" },
     })
 
     const transaction = new TransactionSession(session)

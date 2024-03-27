@@ -20,7 +20,7 @@ const baseSchema = {
   },
   deleterUser: {
     type: String,
-  }
+  },
 }
 
 export default baseSchema

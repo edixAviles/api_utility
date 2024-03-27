@@ -5,14 +5,14 @@ class ResponseManager<T> {
   onSuccess(response: T): Response<T> {
     return new Response<T>({
       success: true,
-      result: response
+      result: response,
     })
   }
 
   onError(error: ErrorResponse): Response<T> {
     return new Response<T>({
       success: false,
-      error: error
+      error: error,
     })
   }
 }

@@ -4,12 +4,16 @@ class DatabaseConnection {
   private static instance: DatabaseConnection
   public connection: Connection
 
-  private constructor() { }
+  private constructor() {}
 
-  public connectDatabase(username: string, password: string, cluster: string, database: string) {
+  public connectDatabase(
+    username: string,
+    password: string,
+    cluster: string,
+    database: string,
+  ) {
     const uri = `mongodb+srv://${username}:${password}@${cluster}/${database}?retryWrites=true&w=majority`
-    const options = {
-    }
+    const options = {}
 
     mongoose.connect(uri, options).then(() => {
       this.connection = mongoose.connection
