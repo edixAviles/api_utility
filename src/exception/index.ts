@@ -1,1 +1,1 @@
-export * from "./service_exception"
+export { default as ServiceException } from "./service_exception"
