@@ -1,1 +1,1 @@
-export * from "./application_service"
+export { default as ApplicationService } from "./application_service"

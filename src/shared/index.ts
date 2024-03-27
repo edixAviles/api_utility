@@ -1,1 +1,1 @@
-export * from "./utilities"
+export { default as Utilities } from "./utilities"
