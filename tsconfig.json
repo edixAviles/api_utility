@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "allowJs": true,
+    "allowSyntheticDefaultImports": true,
     "baseUrl": "./src",
     "emitDecoratorMetadata": true,
     "esModuleInterop": true,
@@ -9,8 +10,7 @@
     "lib": ["ES5"],
     "module": "CommonJS",
     "moduleResolution": "node",
-    "noEmit": true,
-    "noEmitHelpers": true,
+    "noEmit": false,
     "noImplicitAny": true,
     "noUnusedLocals": true,
     "outDir": "./dist",

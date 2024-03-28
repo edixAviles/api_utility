@@ -3,7 +3,7 @@ import BaseModel from "./base_model"
 import TransactionSession from "../database/transaction_session"
 import Utilities from "../shared/utilities"
 
-abstract class Repository<T extends BaseModel> {
+export default abstract class Repository<T extends BaseModel> {
   public transaction?: TransactionSession
 
   constructor(transaction?: TransactionSession) {
@@ -65,5 +65,3 @@ abstract class Repository<T extends BaseModel> {
     return Utilities.mapToObject(data)
   }
 }
-
-export default Repository
