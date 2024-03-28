@@ -1,6 +1,6 @@
 import ErrorResponse from "../response/error_response"
 
-class ServiceException extends Error {
+export default class ServiceException extends Error {
   constructor(error: ErrorResponse) {
     super(error.message)
 
@@ -10,5 +10,3 @@ class ServiceException extends Error {
     Object.setPrototypeOf(this, ServiceException.prototype)
   }
 }
-
-export default ServiceException

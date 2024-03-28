@@ -1,4 +1,4 @@
-import { defineConfig } from "tsup";
+import { defineConfig } from "tsup"
 
 export default defineConfig({
   entry: {
@@ -8,4 +8,4 @@ export default defineConfig({
   format: ["esm", "cjs"],
   esbuildPlugins: [],
   dts: "src/index.ts",
-});
+})

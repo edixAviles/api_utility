@@ -4,15 +4,14 @@
   "description": "",
   "author": "Edison Avilés",
   "license": "ISC",
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
-  "type": "module",
+  "main": "./dist/src/index.cjs",
+  "module": "./dist/src/index.js",
+  "types": "./dist/src/index.d.ts",
   "scripts": {
     "build": "npx tsup --dts",
     "pretty": "prettier --write \"./**/*.{js,jsx,mjs,cjs,ts,tsx,json}\"",
     "start:dev": "npx nodemon",
-    "start": "tsc && node dist/index.js"
+    "start": "tsc && node ./dist/src/index.js"
   },
   "eslintConfig": {
     "parser": "@typescript-eslint/parser",

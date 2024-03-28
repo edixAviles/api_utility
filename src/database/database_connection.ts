@@ -1,6 +1,6 @@
 import mongoose, { Connection } from "mongoose"
 
-class DatabaseConnection {
+export default class DatabaseConnection {
   private static instance: DatabaseConnection
   public connection: Connection
 
@@ -29,5 +29,3 @@ class DatabaseConnection {
     return DatabaseConnection.instance
   }
 }
-
-export default DatabaseConnection
