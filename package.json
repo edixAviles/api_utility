@@ -10,7 +10,8 @@
   ],
   "scripts": {
     "start:dev": "npx nodemon",
-    "build": "tsc"
+    "build": "tsc",
+    "prepare": "npm run build"
   },
   "eslintConfig": {
     "parser": "@typescript-eslint/parser",
