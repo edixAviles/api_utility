@@ -37,6 +37,7 @@
   "dependencies": {
     "@automapper/classes": "^8.8.1",
     "@swc/core": "^1.4.11",
+    "mongodb": "^6.5.0",
     "mongoose": "^8.2.4",
     "tsup": "^8.0.2",
     "typescript": "^5.4.2"
