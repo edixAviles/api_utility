@@ -12,7 +12,8 @@
   ],
   "scripts": {
     "start:dev": "npx nodemon",
-    "build": "npx tsup --dts"
+    "build": "npx tsup --dts",
+    "prepare": "npm run build"
   },
   "eslintConfig": {
     "parser": "@typescript-eslint/parser",
