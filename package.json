@@ -8,8 +8,8 @@
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "files": [
-    "dist",
-    "package.json"
+    "./dist/index.js",
+    "node_modules"
   ],
   "exports": {
     ".": {
@@ -21,7 +21,7 @@
   "scripts": {
     "pretty": "prettier --write \"./**/*.{js,jsx,mjs,cjs,ts,tsx,json}\"",
     "start:dev": "npx nodemon",
-    "build": "tsup ./src"
+    "build": "npx tsup --dts"
   },
   "eslintConfig": {
     "parser": "@typescript-eslint/parser",
