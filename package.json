@@ -4,13 +4,15 @@
   "description": "",
   "author": "Edison Avilés",
   "license": "ISC",
-  "main": "dist/src/index.js",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
   "files": [
     "dist/"
   ],
   "scripts": {
     "start:dev": "npx nodemon",
-    "build": "tsc",
+    "build": "npx tsup --dts",
     "prepare": "npm run build"
   },
   "eslintConfig": {
@@ -34,7 +36,9 @@
   },
   "dependencies": {
     "@automapper/classes": "^8.8.1",
+    "@swc/core": "^1.4.11",
     "mongoose": "^8.1.3",
+    "tsup": "^8.0.2",
     "typescript": "^5.4.2"
   }
 }
