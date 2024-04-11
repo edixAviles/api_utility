@@ -1,18 +1,18 @@
 import { ClientSession } from "mongoose"
 
 export default class TransactionSession {
-  public session: ClientSession
+  session: ClientSession
 
   constructor(session: ClientSession) {
     this.session = session
   }
 
-  public async completeTransaction(): Promise<void> {
+  async completeTransactionAsync(): Promise<void> {
     await this.session.commitTransaction()
     await this.session.endSession()
   }
 
-  public async cancellTransaction(): Promise<void> {
+  async cancellTransactionAsync(): Promise<void> {
     await this.session.abortTransaction()
     await this.session.endSession()
   }

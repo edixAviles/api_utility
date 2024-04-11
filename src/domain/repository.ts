@@ -4,7 +4,7 @@ import TransactionSession from "../database/transaction_session"
 import Utilities from "../shared/utilities"
 
 export default abstract class Repository<T extends BaseModel> {
-  public transaction?: TransactionSession
+  transaction?: TransactionSession
 
   constructor(transaction?: TransactionSession) {
     this.transaction = transaction
@@ -23,7 +23,7 @@ export default abstract class Repository<T extends BaseModel> {
     }
   }
 
-  public optionsToInsert(): object {
+  optionsToInsert(): object {
     if (!this.transaction?.session) {
       return {}
     }
@@ -33,7 +33,7 @@ export default abstract class Repository<T extends BaseModel> {
     }
   }
 
-  public optionsToUpdate(): object {
+  optionsToUpdate(): object {
     const options = new Map<string, any>()
     options.set("new", true)
 
@@ -52,7 +52,7 @@ export default abstract class Repository<T extends BaseModel> {
     }
   }
 
-  public mapObjectToUpdate(entity: T): object {
+  mapObjectToUpdate(entity: T): object {
     const data = new Map<string, any>()
 
     const entries = Object.entries(entity)

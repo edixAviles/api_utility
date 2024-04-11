@@ -33,12 +33,13 @@
   },
   "dependencies": {
     "@automapper/classes": "^8.8.1",
-    "@types/node": "^20.12.3",
     "@swc/core": "^1.4.11",
+    "@types/node": "^20.12.3",
+    "axios": "^1.6.8",
     "mongodb": "^6.5.0",
     "mongoose": "^8.2.4",
-    "tsup": "^8.0.2",
     "ts-node": "^10.9.2",
+    "tsup": "^8.0.2",
     "typescript": "^5.4.3"
   },
   "devDependencies": {
