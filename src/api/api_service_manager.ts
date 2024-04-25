@@ -8,13 +8,12 @@ import ErrorResponse from "../response/error_response"
 import ApiResponseDto from "./api_response_dto"
 
 export default class ApiServiceManager {
-
-  async sendRequest<T>(request: RequestDataDto, type: HttpMethods): Promise<T | null> {
+  readonly sendRequest = async <T>(request: RequestDataDto, type: HttpMethods): Promise<T | null> => {
     const data = await this.handleRequest<T>(request, type)
     return data
   }
 
-  private async handleRequest<T>(request: RequestDataDto, type: HttpMethods): Promise<T> {
+  private readonly handleRequest = async <T>(request: RequestDataDto, type: HttpMethods): Promise<T> => {
     const apiResponse = new ApiResponseDto<T>()
 
     try {
@@ -36,7 +35,7 @@ export default class ApiServiceManager {
           break
       }
     } catch (error) {
-      if(error instanceof AxiosError)  {
+      if (error instanceof AxiosError) {
         throw new ServiceException(new ErrorResponse(error.code || "", error.response?.statusText || ""))
       }
     }

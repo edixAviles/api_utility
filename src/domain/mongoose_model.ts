@@ -5,10 +5,7 @@ const baseOptions = {
   timestamps: true,
 }
 
-const mongooseModel = (
-  className: string,
-  properties: any,
-): mongoose.Model<any> => {
+const mongooseModel = (className: string, properties: any): mongoose.Model<any> => {
   const schema = new mongoose.Schema(
     {
       ...baseSchema,

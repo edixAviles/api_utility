@@ -2,13 +2,13 @@ import DatabaseConnection from "./database_connection"
 import TransactionSession from "./transaction_session"
 
 export default class TransactionManager {
-  private dbContext: DatabaseConnection
+  private readonly dbContext: DatabaseConnection
 
   constructor() {
     this.dbContext = DatabaseConnection.getInstance()
   }
 
-  async beginTransactionAsync(): Promise<TransactionSession> {
+  readonly beginTransactionAsync = async (): Promise<TransactionSession> => {
     const session = await this.dbContext.connection.startSession()
     session.startTransaction({
       readConcern: { level: "snapshot" },
