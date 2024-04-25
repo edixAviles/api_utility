@@ -8,12 +8,12 @@ import ErrorResponse from "../response/error_response"
 import ApiResponseDto from "./api_response_dto"
 
 export default class ApiServiceManager {
-  readonly sendRequestAsync = async <T>(request: RequestDataDto, type: HttpMethods): Promise<T | null> => {
+  readonly sendRequestAsync =  <T>(request: RequestDataDto, type: HttpMethods): Promise<T | null> => {
     const data = await this.handleRequestAsync<T>(request, type)
     return data
   }
 
-  private readonly handleRequestAsync = async <T>(request: RequestDataDto, type: HttpMethods): Promise<T> => {
+  private readonly handleRequestAsync =  <T>(request: RequestDataDto, type: HttpMethods): Promise<T> => {
     const apiResponse = new ApiResponseDto<T>()
 
     try {
