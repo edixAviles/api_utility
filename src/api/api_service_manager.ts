@@ -8,30 +8,30 @@ import ErrorResponse from "../response/error_response"
 import ApiResponseDto from "./api_response_dto"
 
 export default class ApiServiceManager {
-  readonly sendRequestAsync =  <T>(request: RequestDataDto, type: HttpMethods): Promise<T | null> => {
-    const data = await this.handleRequestAsync<T>(request, type)
+  readonly sendRequest = async <T>(request: RequestDataDto, type: HttpMethods): Promise<T | null> => {
+    const data = await this.handleRequest<T>(request, type)
     return data
   }
 
-  private readonly handleRequestAsync =  <T>(request: RequestDataDto, type: HttpMethods): Promise<T> => {
-    const apiResponse = new ApiResponseDto<T>()
+  private readonly handleRequest = async <T>(request: RequestDataDto, type: HttpMethods): Promise<T> => {
+    const response = new ApiResponseDto<T>()
 
     try {
       switch (type) {
         case HttpMethods.GET:
-          ({ data: apiResponse.data, status: apiResponse.status } = await axios.get<T>(request.urlBase))
+          ({ data: response.data, status: response.status } = await axios.get<T>(request.urlBase))
           break
         case HttpMethods.POST:
-          ({ data: apiResponse.data, status: apiResponse.status } = await axios.post<T>(request.urlBase, request.body))
+          ({ data: response.data, status: response.status } = await axios.post<T>(request.urlBase, request.body))
           break
         case HttpMethods.PATCH:
-          ({ data: apiResponse.data, status: apiResponse.status } = await axios.patch<T>(request.urlBase, request.body))
+          ({ data: response.data, status: response.status } = await axios.patch<T>(request.urlBase, request.body))
           break
         case HttpMethods.PUT:
-          ({ data: apiResponse.data, status: apiResponse.status } = await axios.put<T>(request.urlBase, request.body))
+          ({ data: response.data, status: response.status } = await axios.put<T>(request.urlBase, request.body))
           break
         case HttpMethods.DELETE:
-          ({ data: apiResponse.data, status: apiResponse.status } = await axios.get<T>(request.urlBase))
+          ({ data: response.data, status: response.status } = await axios.get<T>(request.urlBase))
           break
       }
     } catch (error) {
@@ -40,10 +40,10 @@ export default class ApiServiceManager {
       }
     }
 
-    if (apiResponse.status != HttpStatusCode.OK) {
-      throw new ServiceException(new ErrorResponse(apiResponse.status.toString(), ""))
+    if (response.status != HttpStatusCode.OK) {
+      throw new ServiceException(new ErrorResponse(response.status.toString(), ""))
     }
 
-    return apiResponse.data
+    return response.data
   }
 }

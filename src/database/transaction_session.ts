@@ -7,12 +7,12 @@ export default class TransactionSession {
     this.session = session
   }
 
-  readonly completeTransactionAsync =  (): Promise<void> => {
+  readonly completeTransaction = async (): Promise<void> => {
     await this.session.commitTransaction()
     await this.session.endSession()
   }
 
-  readonly cancellTransactionAsync =  (): Promise<void> => {
+  readonly cancellTransaction = async (): Promise<void> => {
     await this.session.abortTransaction()
     await this.session.endSession()
   }
