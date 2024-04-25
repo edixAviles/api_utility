@@ -4,26 +4,26 @@ import TransactionSession from "../database/transaction_session"
 import Utilities from "../shared/utilities"
 
 export default abstract class Repository<T extends BaseModel> {
-  transaction?: TransactionSession
+  readonly transaction?: TransactionSession
 
   constructor(transaction?: TransactionSession) {
     this.transaction = transaction
   }
 
-  static filterToGetById(id: ObjectId): object {
+  static readonly filterToGetById = (id: ObjectId): object => {
     return {
       _id: id,
       isDeleted: { $ne: true },
     }
   }
 
-  static filterToGetActive(): object {
+  static readonly filterToGetActive = (): object => {
     return {
       isDeleted: { $ne: true },
     }
   }
 
-  optionsToInsert(): object {
+  readonly optionsToInsert = (): object => {
     if (!this.transaction?.session) {
       return {}
     }
@@ -33,7 +33,7 @@ export default abstract class Repository<T extends BaseModel> {
     }
   }
 
-  optionsToUpdate(): object {
+  readonly optionsToUpdate = (): object => {
     const options = new Map<string, any>()
     options.set("new", true)
 
@@ -45,14 +45,14 @@ export default abstract class Repository<T extends BaseModel> {
     return Utilities.mapToObject(options)
   }
 
-  static paramsToDelete(): object {
+  static readonly paramsToDelete = (): object => {
     return {
       isDeleted: true,
       deletedAt: new Date(),
     }
   }
 
-  mapObjectToUpdate(entity: T): object {
+  readonly mapObjectToUpdate = (entity: T): object => {
     const data = new Map<string, any>()
 
     const entries = Object.entries(entity)

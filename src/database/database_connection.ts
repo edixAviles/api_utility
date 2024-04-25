@@ -4,14 +4,9 @@ export default class DatabaseConnection {
   private static instance: DatabaseConnection
   connection: Connection
 
-  private constructor() {}
+  private constructor() { }
 
-  connectDatabase(
-    username: string,
-    password: string,
-    cluster: string,
-    database: string,
-  ) {
+  readonly connectDatabase = (username: string, password: string, cluster: string, database: string) => {
     const uri = `mongodb+srv://${username}:${password}@${cluster}/${database}?retryWrites=true&w=majority`
     const options = {}
 
@@ -21,7 +16,7 @@ export default class DatabaseConnection {
     })
   }
 
-  static getInstance(): DatabaseConnection {
+  static readonly getInstance = (): DatabaseConnection => {
     if (!DatabaseConnection.instance) {
       DatabaseConnection.instance = new DatabaseConnection()
     }
