@@ -2,11 +2,11 @@ import mongoose, { Connection } from "mongoose"
 
 export default class DatabaseConnection {
   private static instance: DatabaseConnection
-  public connection: Connection
+  connection: Connection
 
   private constructor() {}
 
-  public connectDatabase(
+  connectDatabase(
     username: string,
     password: string,
     cluster: string,
@@ -21,7 +21,7 @@ export default class DatabaseConnection {
     })
   }
 
-  public static getInstance(): DatabaseConnection {
+  static getInstance(): DatabaseConnection {
     if (!DatabaseConnection.instance) {
       DatabaseConnection.instance = new DatabaseConnection()
     }

@@ -1,9 +1,9 @@
 export default class ErrorResponse {
-  public code: string
-  public message: string
-  public details?: string
+  code: string
+  message: string
+  details?: string
 
-  public constructor(code: string, message: string, details?: string) {
+  constructor(code: string, message: string, details?: string) {
     this.code = code
     this.message = message
     this.details = details
