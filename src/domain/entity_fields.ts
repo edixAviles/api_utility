@@ -1,5 +1,5 @@
 enum EntityFields {
-  id = "id",
+  Id = "id",
 }
 
 export default EntityFields

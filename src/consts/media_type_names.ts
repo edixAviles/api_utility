@@ -1,5 +1,5 @@
 enum Text {
-  base64 = "base64",
+  Base64 = "base64",
 }
 
 export default abstract class MediaTypeNames {
