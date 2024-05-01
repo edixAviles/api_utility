@@ -1,4 +1,4 @@
-import ErrorResponse from "../response/error_response"
+import { ErrorResponse } from "../response"
 
 export default abstract class ServiceError {
   static readonly getException = (error: any): ErrorResponse => {

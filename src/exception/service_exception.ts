@@ -1,4 +1,4 @@
-import ErrorResponse from "../response/error_response"
+import { ErrorResponse } from "../response"
 
 export default class ServiceException extends Error {
   constructor(error: ErrorResponse) {
