@@ -2,12 +2,14 @@ import express, { Router } from "express"
 import bodyParser from "body-parser"
 import cors from "cors"
 import middleware from "i18next-http-middleware"
-import i18next from "i18next"
+import { i18n } from "i18next"
 
 import { ApiConfiguration } from "../consts"
 
+type I18next = i18n;
+
 export default class ApiRequest {
-  readonly listen = (path: string, router: Router, origin: string, localizer: typeof i18next) => {
+  readonly listen = (path: string, router: Router, origin: string, localizer: I18next) => {
     const port = process.env.PORT || 3000
     const originCors = {
       origin: ApiConfiguration.isProduction ? origin : "*",
