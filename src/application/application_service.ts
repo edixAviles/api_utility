@@ -1,4 +1,4 @@
-import TransactionManager from "../database/transaction_manager"
+import { TransactionManager } from "../database"
 
 export default abstract class ApplicationService {
   readonly transactionManager: TransactionManager

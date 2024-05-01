@@ -1,11 +1,12 @@
 import axios, { AxiosError } from "axios"
 
-import HttpMethods from "../consts/http_methods"
-import RequestDataDto from "./request_data_dto"
-import HttpStatusCode from "../consts/http_status_code"
-import ServiceException from "../exception/service_exception"
-import ErrorResponse from "../response/error_response"
 import ApiResponseDto from "./api_response_dto"
+import RequestDataDto from "./request_data_dto"
+
+import { HttpMethods } from "../consts"
+import { HttpStatusCode } from "../consts"
+import { ServiceException } from "../exception"
+import { ErrorResponse } from "../response"
 
 export default class ApiServiceManager {
   readonly sendRequest = async <T>(request: RequestDataDto, type: HttpMethods): Promise<T | null> => {

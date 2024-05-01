@@ -1,7 +1,8 @@
 import { ObjectId } from "mongodb"
 import BaseModel from "./base_model"
-import TransactionSession from "../database/transaction_session"
-import Utilities from "../shared/utilities"
+
+import { TransactionSession } from "../database"
+import { Utilities } from "../shared"
 
 export default abstract class Repository<T extends BaseModel> {
   readonly transaction?: TransactionSession
