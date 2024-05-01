@@ -16,7 +16,7 @@ export default class DatabaseConnection {
     })
   }
 
-  readonly getInstance = (): DatabaseConnection => {
+  static readonly getInstance = (): DatabaseConnection => {
     if (!DatabaseConnection.instance) {
       DatabaseConnection.instance = new DatabaseConnection()
     }
