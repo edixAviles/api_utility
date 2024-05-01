@@ -5,7 +5,7 @@ import cors from "cors"
 import { ApiConfiguration } from "../consts"
 
 export default abstract class ApiRequest {
-  static readonly listen = (path: string, router: Router, origin: string, port: number): Express => {
+  static readonly prepare = (path: string, router: Router, origin: string): Express => {
     const originCors = {
       origin: ApiConfiguration.isProduction ? origin : "*",
     }
@@ -16,10 +16,6 @@ export default abstract class ApiRequest {
 
     app.use(cors(originCors))
     app.use(path, router)
-    app.listen(port, () => {
-      console.info(`Server listening on ${port}`)
-    })
-
     return app
   }
 }
