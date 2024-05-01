@@ -1,22 +1,16 @@
-import express, { Router } from "express"
+import express, { Express, Router } from "express"
 import bodyParser from "body-parser"
 import cors from "cors"
-import middleware from "i18next-http-middleware"
-import { i18n } from "i18next"
 
 import { ApiConfiguration } from "../consts"
 
-type I18next = i18n;
-
-export default class ApiRequest {
-  readonly listen = (path: string, router: Router, origin: string, localizer: I18next) => {
-    const port = process.env.PORT || 3000
+export default abstract class ApiRequest {
+  static readonly listen = (path: string, router: Router, origin: string, port: number): Express => {
     const originCors = {
       origin: ApiConfiguration.isProduction ? origin : "*",
     }
 
     const app = express()
-    app.use(middleware.handle(localizer))
     app.use(bodyParser.json({ limit: ApiConfiguration.limitRequest }))
     app.use(bodyParser.urlencoded({ limit: ApiConfiguration.limitRequest, extended: true }))
 
@@ -25,5 +19,7 @@ export default class ApiRequest {
     app.listen(port, () => {
       console.info(`Server listening on ${port}`)
     })
+
+    return app
   }
 }
