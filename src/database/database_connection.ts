@@ -6,8 +6,8 @@ export default class DatabaseConnection {
 
   private constructor() { }
 
-  readonly connectDatabase = (username: string, password: string, cluster: string, database: string) => {
-    const uri = `mongodb+srv://${username}:${password}@${cluster}/${database}?retryWrites=true&w=majority`
+  readonly connectDatabase = (username: string, password: string, host: string, database: string) => {
+    const uri = `mongodb+srv://${username}:${password}@${host}/${database}?retryWrites=true&w=majority`
     const options = {}
 
     mongoose.connect(uri, options).then(() => {
