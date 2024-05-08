@@ -1,5 +1,6 @@
 export * from "./api"
 export * from "./application"
+export * from "./configuration"
 export * from "./consts"
 export * from "./database"
 export * from "./domain"
