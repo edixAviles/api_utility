@@ -6,7 +6,7 @@ export default class DatabaseConnection {
 
   private constructor() { }
 
-  readonly connectDatabase = (username: string, password: string, host: string, database: string) => {
+  readonly connect = (username: string, password: string, host: string, database: string) => {
     const uri = `mongodb+srv://${username}:${password}@${host}/${database}?retryWrites=true&w=majority`
     const options = {}
 

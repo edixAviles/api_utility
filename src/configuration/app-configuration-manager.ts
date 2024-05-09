@@ -5,17 +5,9 @@ export default class AppConfigurationManager {
   private static instance: AppConfigurationManager
   private configurationObject: ConfigurationObject
 
-  private constructor(pathConfig: string) {
-    const data = readFileSync(pathConfig, { encoding: "utf8", flag: "r" })
+  private constructor(configPath: string) {
+    const data = readFileSync(configPath, { encoding: "utf8", flag: "r" })
     this.configurationObject = JSON.parse(data).AppConfiguration as ConfigurationObject
-
-    /*readFile(pathConfig, "utf8", (error, data) => {
-      if (error) {
-        console.log(error)
-        return
-      }
-
-    })*/
   }
 
   readonly getServiceUrlBySystemControllerCapacity = (system: string, controller: string, capacity: string): string | undefined => {
@@ -33,11 +25,13 @@ export default class AppConfigurationManager {
       ?.Value
   }
 
-  static readonly getInstance = (pathConfig: string): AppConfigurationManager => {
+  static readonly build = (configPath: string): void => {
     if (!AppConfigurationManager.instance) {
-      AppConfigurationManager.instance = new AppConfigurationManager(pathConfig)
+      AppConfigurationManager.instance = new AppConfigurationManager(configPath)
     }
+  }
 
+  static readonly getInstance = (): AppConfigurationManager => {
     return AppConfigurationManager.instance
   }
 }
