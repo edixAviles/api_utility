@@ -5,8 +5,13 @@ export default class AppConfigurationManager {
   private static instance: AppConfigurationManager
   private configurationObject: ConfigurationObject
 
-  private constructor(configPath: string) {
-    const data = readFileSync(configPath, { encoding: "utf8", flag: "r" })
+  private constructor(configPath: string, values: object) {
+    let data = readFileSync(configPath, { encoding: "utf8", flag: "r" })
+
+    for (const [key, value] of Object.entries(values)) {
+      data = data.replaceAll(key, value)
+    }
+
     this.configurationObject = JSON.parse(data).AppConfiguration as ConfigurationObject
   }
 
@@ -25,9 +30,9 @@ export default class AppConfigurationManager {
       ?.Value
   }
 
-  static readonly build = (configPath: string): void => {
+  static readonly build = (configPath: string, values: object): void => {
     if (!AppConfigurationManager.instance) {
-      AppConfigurationManager.instance = new AppConfigurationManager(configPath)
+      AppConfigurationManager.instance = new AppConfigurationManager(configPath, values)
     }
   }
 

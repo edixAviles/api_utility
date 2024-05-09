@@ -9,5 +9,5 @@ export default defineConfig({
   esbuildPlugins: [],
   external: [],
   format: ["esm", "cjs"],
-  target: "es2020",
+  target: "es2021",
 })
