@@ -9,7 +9,7 @@ export default class AppConfigurationManager {
     let data = readFileSync(configPath, { encoding: "utf8", flag: "r" })
 
     for (const [key, value] of Object.entries(values)) {
-      data = data.replaceAll(key, value)
+      data = data.replaceAll(key, `#{${value}}#`)
     }
 
     this.configurationObject = JSON.parse(data).AppConfiguration as ConfigurationObject
