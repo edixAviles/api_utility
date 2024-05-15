@@ -1,5 +1,5 @@
-import DatabaseConnection from "./database_connection"
-import TransactionSession from "./transaction_session"
+import DatabaseConnection from "./database-connection"
+import TransactionSession from "./transaction-session"
 
 export default class TransactionManager {
   private readonly dbContext: DatabaseConnection

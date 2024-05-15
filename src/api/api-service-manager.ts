@@ -1,7 +1,7 @@
 import axios, { AxiosError } from "axios"
 
-import ApiResponseDto from "./api_response_dto"
-import RequestDataDto from "./request_data_dto"
+import ApiResponseDto from "./api-response-dto"
+import RequestDataDto from "./request-data-dto"
 
 import { HttpMethods } from "../consts"
 import { HttpStatusCode } from "../consts"

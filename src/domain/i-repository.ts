@@ -1,5 +1,5 @@
 import { ObjectId } from "mongodb"
-import BaseModel from "./base_model"
+import BaseModel from "./base-model"
 
 export interface IRepository<T extends BaseModel> {
   get(id: ObjectId): Promise<T | null>

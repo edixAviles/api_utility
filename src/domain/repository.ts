@@ -1,5 +1,5 @@
 import { ObjectId } from "mongodb"
-import BaseModel from "./base_model"
+import BaseModel from "./base-model"
 
 import { TransactionSession } from "../database"
 import { Utilities } from "../shared"
