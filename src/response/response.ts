@@ -1,4 +1,4 @@
-import ErrorResponse from "./error_response"
+import ErrorResponse from "./error-response"
 
 export default class Response<T> {
   success: boolean

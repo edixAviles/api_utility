@@ -1,3 +1,3 @@
-export { default as ApiRequest } from "./api_request"
-export { default as ApiServiceManager } from "./api_service_manager"
-export { default as RequestDataDto } from "./request_data_dto"
+export { default as ApiRequest } from "./api-request"
+export { default as ApiServiceManager } from "./api-service-manager"
+export { default as RequestDataDto } from "./request-data-dto"

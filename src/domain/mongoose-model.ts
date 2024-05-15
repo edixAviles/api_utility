@@ -1,5 +1,5 @@
 import mongoose from "mongoose"
-import baseSchema from "./base_schema"
+import baseSchema from "./base-schema"
 
 const baseOptions = {
   timestamps: true,

@@ -1,5 +1,5 @@
 import Response from "./response"
-import ErrorResponse from "./error_response"
+import ErrorResponse from "./error-response"
 
 export default class ResponseManager<T> {
   readonly onSuccess = (response: T): Response<T> => {
