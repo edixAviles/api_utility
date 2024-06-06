@@ -1,14 +1,15 @@
 import axios, { AxiosError } from "axios"
 
-import ApiResponseDto from "./api-response-dto"
-import RequestDataDto from "./request-data-dto"
+import ApiResponseDto from "./contracts/api-response-dto"
+import RequestDataDto from "./contracts/request-data-dto"
 
 import { HttpMethods } from "../consts"
 import { HttpStatusCode } from "../consts"
 import { ServiceException } from "../exception"
 import { ErrorResponse } from "../response"
+import { IApiServiceManager } from "./contracts/i-api-service-manager"
 
-export default class ApiServiceManager {
+export default class ApiServiceManager implements IApiServiceManager {
   readonly sendRequest = async <T>(request: RequestDataDto, type: HttpMethods): Promise<T | null> => {
     const data = await this.handleRequest<T>(request, type)
     return data
