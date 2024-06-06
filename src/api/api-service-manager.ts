@@ -33,7 +33,7 @@ export default class ApiServiceManager implements IApiServiceManager {
           ({ data: response.data, status: response.status } = await axios.put<T>(request.urlBase, request.body))
           break
         case HttpMethods.DELETE:
-          ({ data: response.data, status: response.status } = await axios.get<T>(request.urlBase))
+          ({ data: response.data, status: response.status } = await axios.delete<T>(request.urlBase))
           break
       }
     } catch (error) {
