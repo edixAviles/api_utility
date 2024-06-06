@@ -1,5 +1,5 @@
 import { readFileSync } from "fs"
-import ConfigurationObject from "./configuration-object"
+import ConfigurationObject from "./models/configuration-object"
 
 export default class AppConfigurationManager {
   private static instance: AppConfigurationManager
