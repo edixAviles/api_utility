@@ -10,7 +10,7 @@ import { ErrorResponse } from "../response"
 import { IApiServiceManager } from "./contracts/i-api-service-manager"
 
 export default class ApiServiceManager implements IApiServiceManager {
-  readonly sendRequest = async <T>(request: RequestDataDto, type: HttpMethods): Promise<T | null> => {
+  readonly sendRequest = async <T>(request: RequestDataDto, type: HttpMethods): Promise<T> => {
     const data = await this.handleRequest<T>(request, type)
     return data
   }
